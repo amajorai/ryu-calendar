@@ -1,0 +1,18 @@
+// Calendar app entry. Mounts the React component into `#ryu-plugin-root` the host
+// document provides. `window.ryu` is installed inline by the Path B host bootstrap
+// (injected into <head>) BEFORE this module runs, so the first effect's
+// `window.ryu.calendar.jobs()` call is queued until the host port arrives.
+
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./tailwind.css";
+import { App } from "./App.tsx";
+
+const container = document.getElementById("ryu-plugin-root");
+if (container) {
+	createRoot(container).render(
+		<StrictMode>
+			<App />
+		</StrictMode>
+	);
+}
