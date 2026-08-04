@@ -1,0 +1,51 @@
+{
+  "id": "@ryu/calendar",
+  "name": "Calendar",
+  "version": "1.0.0",
+  "description": "The scheduled-runs calendar: every agent and workflow scheduled job projected onto Month, Week, Day, and Agenda views — past runs from history, upcoming runs from cron/interval — with a New automation dialog that schedules an agent.",
+  "icon": "calendar-04",
+  "iconDither": { "from": 288, "to": 322, "direction": "up" },
+  "surfaces": {
+    "gateway": { "support": "none" },
+    "core": { "support": "none" },
+    "desktop": { "support": "full" },
+    "island": { "support": "limited" },
+    "mobile": { "support": "limited" },
+    "extension": { "support": "none" },
+    "web": { "support": "full" },
+    "cli": { "support": "list" }
+  },
+  "engines": {
+    "ryu": ">=0.1.0"
+  },
+  "runnables": [
+    {
+      "id": "calendar-companion",
+      "name": "Calendar",
+      "kind": "companion",
+      "config": {
+        "label": "Calendar",
+        "ui_entry": "./dist/index.html",
+        "ui_format": "html"
+      }
+    }
+  ],
+  "permission_grants": ["calendar:crud"],
+  "permission_levels": [
+    {
+      "id": "calendar.view",
+      "label": "Can view",
+      "description": "See past and upcoming scheduled runs for every agent and workflow on this node."
+    },
+    {
+      "id": "calendar.schedule",
+      "label": "Can schedule",
+      "description": "Create, reschedule, and remove automations, which decides what runs unattended on this node and when.",
+      "implies": ["calendar.view"]
+    }
+  ],
+  "companion": {
+    "label": "Calendar",
+    "icon": "calendar-04"
+  }
+}
