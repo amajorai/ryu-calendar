@@ -1,0 +1,18 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "ryu.calendar",
+  "version": "1.0.0",
+  "description": "The scheduled-runs calendar: every agent and workflow scheduled job projected onto Month, Week, Day, and Agenda views — past runs from history, upcoming runs from cron/interval — with a New automation dialog that schedules an agent.",
+  "keywords": [
+    "calendar",
+    "scheduling",
+    "automation",
+    "runs"
+  ],
+  "extensions": {
+    "com.ryuhq.ryu": {
+      "id": "@ryu/calendar",
+      "displayName": "Calendar"
+    }
+  }
+}
